@@ -136,4 +136,4 @@ user_data = preprocessing.StandardScaler().fit(X).transform(user_data)
 
 #Prediccion
 prediction = loaded_model.predict(user_data)
-st.markdown(f"Categoría de servicio predicha: <font style='color: blue;'>{prediction[0]}</font>", unsafe_allow_html=True)
+st.markdown(f"<font style='font-size: 50px;'>Categoría de servicio predicha: <font  style='color: blue;'>{prediction[0]}</font></font>", unsafe_allow_html=True)
