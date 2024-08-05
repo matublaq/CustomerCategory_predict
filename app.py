@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import preprocessing
+
 import streamlit as st
+import streamlit.components.v1 as components 
 
 import requests
 
@@ -49,7 +51,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,  random
 ####################################################################
 #Modelo de clasificacion KNN
 if st.button('Ver el desarrollo del modelo'):
-    pass
+    with open('knn.html', 'r') as file:
+        html_content = file.read()
+    components.html(html_content, height=600, scrolling=True)
 from sklearn.neighbors import KNeighborsClassifier
 k = st.number_input('k = ? ', min_value=1, max_value=100, value=4)#k vecinos mas cercanos
 
